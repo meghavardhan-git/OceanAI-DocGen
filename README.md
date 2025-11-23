@@ -12,6 +12,36 @@ OceanAI DocGen is a Flask-based intelligent document creation platform powered b
 - ✨ Section refinement with custom instructions
 - 📝 Feedback & comments per section
 - 📤 Export entire project as DOCX or PPTX
+  
+### Project Structure
+```text
+oceanai/
+├── backend/
+│   ├── routes/
+│   │   ├── project_routes.py      # Project creation, section listing, AI generation
+│   │   ├── refine_routes.py       # Refining content, comments, feedback
+│   │   ├── export_routes.py       # DOCX/PPTX export endpoints
+│   │   └── setup_routes.py        # Setup helper endpoints
+│   ├── services/
+│   │   ├── llm_service.py         # Gemini + LangChain prompts & LLM calls
+│   │   ├── project_service.py     # Project & section AI generation logic
+│   │   ├── refine_service.py      # Content refinement operations
+│   │   └── export_service.py      # Document & slide export logic
+│   ├── static/
+│   │   └── main.js                # Frontend JS for fetch calls & UI updates
+│   ├── templates/
+│   │   ├── login.html             # Login UI
+│   │   ├── signup.html            # Signup UI
+│   │   └── index.html             # Dashboard UI
+│   ├── app.py                     # Main Flask application
+│   ├── auth.py                    # Login & signup logic
+│   ├── database.py                # SQLAlchemy instance & initialization
+│   ├── models.py                  # User, Project, Section models
+│   └── requirements.txt           # Backend dependencies
+├── folderstructure.py             # Script to auto-generate backend directory layout
+├── README.md                      # Main documentation file
+└── requirements.txt               # Root-level requirements file
+```
 
 ⚙️ Setup & Installation
 
@@ -36,7 +66,6 @@ source venv/bin/activate
 ### 3️⃣ Install backend dependencies
 
 ```bash
-cd backend
 pip install -r requirements.txt
 ```
 
@@ -66,26 +95,28 @@ Visit:
 - [http://127.0.0.1:5000](http://127.0.0.1:5000) → Login  
 - /signup-page → Signup  
 - /dashboard → After login
+
+
 ## 📸 Screenshots
-# Signup Page
+**Signup Page**
 <img width="1915" height="1048" alt="signup" src="https://github.com/user-attachments/assets/b501dd18-803f-43a1-846c-f3970a6423a8" />
-# Login Page
+**Login Page**
 <img width="1915" height="1047" alt="login" src="https://github.com/user-attachments/assets/d4d09ed2-7d75-4a8c-adc1-0f8d3c81e262" />
-# Dashboard
+**Dashboard**
 <img width="1913" height="1046" alt="dashboard" src="https://github.com/user-attachments/assets/87c78ca5-411b-4c71-a1d3-2c6b96dc929c" />
-# Topic Based Content Generation
+**Topic Based Content Generation**
 <img width="1919" height="1046" alt="generatedtopic" src="https://github.com/user-attachments/assets/fdc287ad-525b-4dd0-bc8a-4d3b67d584cf" />
-# Content Refinement
+**Content Refinement**
 <img width="1888" height="915" alt="refinedcontent" src="https://github.com/user-attachments/assets/81d5402b-e018-4fee-9cf8-429b89369894" />
-# FeedBack For Like/Dislike 
+**FeedBack For Like/Dislike** 
 <img width="1880" height="1042" alt="feedback" src="https://github.com/user-attachments/assets/31196910-9fd1-4cef-9453-93b19c62d9fa" />
-# Comment
+**Comment**
 <img width="1919" height="845" alt="comment" src="https://github.com/user-attachments/assets/951a8e74-13eb-4a75-a886-30a35be11e3a" />
-# Saved Comment
+**Saved Comment**
 <img width="1620" height="465" alt="savedcomment" src="https://github.com/user-attachments/assets/03e73ec5-925b-47f1-8f81-9df5745f7c8e" />
-# Download as Docx/PPT
+**Download as Docx/PPT**
 <img width="1919" height="724" alt="downloaddocx" src="https://github.com/user-attachments/assets/73778863-a798-4998-8004-a1e0f965f1c2" />
-# Downloaded Docx
+**Downloaded Docx**
 <img width="1919" height="724" alt="downloaddocx" src="https://github.com/user-attachments/assets/bc7ff4d3-deb7-4c22-a202-0303ae23fbcd" />
 
 ## 🤝 Contributing
