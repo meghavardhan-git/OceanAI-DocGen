@@ -1,10 +1,10 @@
-# 🧠 OceanAI DocGen – AI Document & PPT Generator
+🧠 OceanAI DocGen – AI Document & PPT Generator
 
 OceanAI DocGen is a Flask-based intelligent document creation platform powered by Google Gemini (via LangChain). It lets you generate structured content section-by-section, refine content with custom instructions, store projects in a database, and export everything into clean DOCX and PPTX files. Built as a backend-focused project with a neat Bootstrap UI.
 
----
+![Build Status](https://img.shields.io/badge/build-passing-brightgreen) ![License](https://img.shields.io/badge/license-MIT-blue) ![Version](https://img.shields.io/badge/version-1.0.0-orange)
 
-## ✨ Features
+✨ Features
 
 - 🔐 User authentication (Login / Signup)
 - 📁 Project creation with sections
@@ -13,156 +13,96 @@ OceanAI DocGen is a Flask-based intelligent document creation platform powered b
 - 📝 Feedback & comments per section
 - 📤 Export entire project as DOCX or PPTX
 
----
-
-## 🧱 Tech Stack
-
-**Backend**
-- Python 3, Flask, Flask-Login, Flask-CORS
-- SQLAlchemy + SQLite
-- LangChain + langchain_google_genai
-- python-docx, python-pptx
-
-**Frontend**
-- HTML, Jinja2, Bootstrap 5
-- Vanilla JavaScript (static/main.js)
-
-**Other**
-- .env for GOOGLE_API_KEY
-- Cloudflare Tunnel (optional)
-
----
-
-## 📁 Project Structure
-
-oceanai/
-├── backend/
-│ ├── app.py # Main Flask application
-│ ├── auth.py # Login / signup logic
-│ ├── database.py # SQLAlchemy instance
-│ ├── models.py # User, Project, Section models
-│ ├── requirements.txt # Backend dependencies
-│ │
-│ ├── routes/
-│ │ ├── project_routes.py # Create project, generate content, list sections
-│ │ ├── refine_routes.py # Refining, comments, feedback
-│ │ ├── export_routes.py # DOCX / PPTX download
-│ │ └── setup_routes.py # Helper endpoints
-│ │
-│ ├── services/
-│ │ ├── llm_service.py # Gemini + LangChain prompt logic
-│ │ ├── project_service.py # Content generation & project logic
-│ │ ├── refine_service.py # Refinement logic
-│ │ └── export_service.py # DOCX / PPTX formatting
-│ │
-│ ├── templates/
-│ │ ├── login.html
-│ │ ├── signup.html
-│ │ └── index.html # Dashboard
-│ │
-│ └── static/
-│ └── main.js # Frontend JS
-│
-├── folderstructure.py # Automatically generates backend folder layout
-├── requirements.txt
-└── README.md
-
-
----
-
-## 🔍 What folderstructure.py Does
-
-`folderstructure.py` is a developer convenience utility that auto-creates the backend folder layout. It generates:
-
-- backend/
-- backend/routes/
-- backend/services/
-- backend/templates/
-- backend/static/
-
-And optional starter files like:
-- app.py  
-- database.py  
-- models.py  
-- routes/__init__.py  
-- services/__init__.py  
-
-It is only used during initial setup—not during runtime.
-
----
-
-## ⚙️ Setup & Installation
+⚙️ Setup & Installation
 
 ### 1️⃣ Clone the repository
 git clone https://github.com/meghavardhan-git/OceanAI-DocGen.git
 
 cd OceanAI-DocGen
 
-
 ### 2️⃣ Create a virtual environment (Windows)
 
-
+```bash
 python -m venv venv
 venv\Scripts\activate
-
+```
 
 macOS/Linux:
 
-
+```bash
 source venv/bin/activate
-
+```
 
 ### 3️⃣ Install backend dependencies
 
-
+```bash
 cd backend
 pip install -r requirements.txt
-
+```
 
 ### 4️⃣ Create .env file
-Inside backend/:
+Inside backend/: 
 
-
+```
 GOOGLE_API_KEY=your_gemini_api_key_here
+```
 
-
----
-
-## ▶️ Running the App
+▶️ Running the App
 
 From project root:
 
-
+```bash
 cd backend
 python -m backend.app
-
+```
 
 or
 
-
+```bash
 python app.py
-
+```
 
 Visit:
-- http://127.0.0.1:5000 → Login  
+- [http://127.0.0.1:5000](http://127.0.0.1:5000) → Login  
 - /signup-page → Signup  
-- /dashboard → After login  
+- /dashboard → After login
+## 📸 Screenshots
+# Signup Page
+<img width="1915" height="1048" alt="signup" src="https://github.com/user-attachments/assets/b501dd18-803f-43a1-846c-f3970a6423a8" />
+# Login Page
+<img width="1915" height="1047" alt="login" src="https://github.com/user-attachments/assets/d4d09ed2-7d75-4a8c-adc1-0f8d3c81e262" />
+# Dashboard
+<img width="1913" height="1046" alt="dashboard" src="https://github.com/user-attachments/assets/87c78ca5-411b-4c71-a1d3-2c6b96dc929c" />
+# Topic Based Content Generation
+<img width="1919" height="1046" alt="generatedtopic" src="https://github.com/user-attachments/assets/fdc287ad-525b-4dd0-bc8a-4d3b67d584cf" />
+# Content Refinement
+<img width="1888" height="915" alt="refinedcontent" src="https://github.com/user-attachments/assets/81d5402b-e018-4fee-9cf8-429b89369894" />
+# FeedBack For Like/Dislike 
+<img width="1880" height="1042" alt="feedback" src="https://github.com/user-attachments/assets/31196910-9fd1-4cef-9453-93b19c62d9fa" />
+# Comment
+<img width="1919" height="845" alt="comment" src="https://github.com/user-attachments/assets/951a8e74-13eb-4a75-a886-30a35be11e3a" />
+# Saved Comment
+<img width="1620" height="465" alt="savedcomment" src="https://github.com/user-attachments/assets/03e73ec5-925b-47f1-8f81-9df5745f7c8e" />
+# Download as Docx/PPT
+<img width="1919" height="724" alt="downloaddocx" src="https://github.com/user-attachments/assets/73778863-a798-4998-8004-a1e0f965f1c2" />
+# Downloaded Docx
+<img width="1919" height="724" alt="downloaddocx" src="https://github.com/user-attachments/assets/bc7ff4d3-deb7-4c22-a202-0303ae23fbcd" />
 
----
+## 🤝 Contributing
 
-## 📝 Git Commands
+We welcome contributions! Please follow these steps:
+1. Fork the repository.
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`).
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`).
+4. Push to the branch (`git push origin feature/AmazingFeature`).
+5. Open a Pull Request.
 
+## 📄 License
 
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-git add .
-git commit -m "Describe your change"
-git push
-
-
----
-
-## 👤 Author
+👤 Author
 
 **Meghavardhan T**  
 AI & Backend Developer  
-GitHub: https://github.com/meghavardhan-git
+GitHub: [meghavardhan-git](https://github.com/meghavardhan-git)
