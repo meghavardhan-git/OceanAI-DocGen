@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>AI Document Platform</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #f5f6fa;
+    }
+    .section-card {
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.07);
+    }
+    pre {
+      background: #f8f9fa;
+      padding: 12px;
+      border-radius: 8px;
+    }
+    .download-buttons {
+      margin-top: -10px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <span class="navbar-brand mb-0 h1">AI Document Generator</span>
+    <button class="btn btn-outline-light btn-sm" onclick="logout()">Logout</button>
+  </div>
+</nav>
+
+<div class="container mt-4">
+
+  <!-- CREATE PROJECT -->
+  <div class="card shadow-sm mb-4">
+    <div class="card-header bg-primary text-white fw-bold">Create New Project</div>
+    <div class="card-body">
+
+      <form id="projectForm">
+        <div class="row g-3">
+          <div class="col-md-8">
+            <label class="form-label fw-semibold">Main Topic</label>
+            <input type="text" class="form-control" id="topic" placeholder="Enter your topic..." required>
+          </div>
+
+          <div class="col-12">
+            <label class="form-label fw-semibold">Section Titles (comma separated)</label>
+            <input type="text" class="form-control" id="sections"
+                   placeholder="Introduction, Market Trends, Challenges, Future Scope">
+          </div>
+
+        </div>
+
+        <button type="submit" class="btn btn-primary mt-3">Create Project</button>
+      </form>
+
+      <div class="mt-3" id="createProjectResult"></div>
+    </div>
+  </div>
+
+  <!-- PROJECT ACTIONS -->
+  <div class="card shadow-sm mb-4">
+    <div class="card-header bg-secondary text-white fw-bold">Project Actions</div>
+    <div class="card-body">
+
+      <div class="row g-3 align-items-center">
+
+        <div class="col-auto">
+          <label class="form-label fw-semibold">Project ID</label>
+        </div>
+
+        <div class="col-auto">
+          <input type="number" class="form-control" id="projectIdInput" min="1">
+        </div>
+
+        <div class="col-auto">
+          <button class="btn btn-success" id="generateBtn">Generate Content</button>
+        </div>
+
+        <div class="col-auto">
+          <button class="btn btn-outline-secondary" id="loadSectionsBtn">Load Sections</button>
+        </div>
+
+      </div>
+
+      <div class="row mt-3 download-buttons">
+        <div class="col-auto">
+          <a id="docxDownload" class="btn btn-outline-primary">Download DOCX</a>
+        </div>
+        <div class="col-auto">
+          <a id="pptxDownload" class="btn btn-outline-warning">Download PPTX</a>
+        </div>
+      </div>
+
+      <div id="projectActionResult" class="mt-2"></div>
+    </div>
+  </div>
+
+  <!-- SECTIONS DISPLAY -->
+  <div id="sectionsContainer"></div>
+
+</div>
+
+<!-- JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="{{ url_for('static', filename='main.js') }}"></script>
+
+</body>
+</html>
